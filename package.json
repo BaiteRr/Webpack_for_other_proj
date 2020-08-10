@@ -1,0 +1,26 @@
+{
+  "name": "webpack_for_other_proj",
+  "version": "1.0.0",
+  "description": "wp proj",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaiteRr/Webpack_for_other_proj.git"
+  },
+  "author": "Ilya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaiteRr/Webpack_for_other_proj/issues"
+  },
+  "homepage": "https://github.com/BaiteRr/Webpack_for_other_proj#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
