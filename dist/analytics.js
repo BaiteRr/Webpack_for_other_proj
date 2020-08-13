@@ -93,8 +93,33 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function createAnalytics() {\n  var counter = 0;\n  var destroyed = false;\n\n  var listener = function listener() {\n    return counter++;\n  };\n\n  document.addEventListener('click', listener);\n  return {\n    destroy: function destroy() {\n      document.removeEventListener('click', listener);\n      destroyed = true;\n    },\n    getClicks: function getClicks() {\n      if (destroyed) {\n        return 'Analytics is destroyed. Total clicks = ${counter}';\n      }\n\n      return counter;\n    }\n  };\n}\n\nwindow.analytics = createAnalytics();\n\n//# sourceURL=webpack:///./analytics.js?");
+function createAnalytics() {
+  var counter = 0;
+  var destroyed = false;
+
+  var listener = function listener() {
+    return counter++;
+  };
+
+  document.addEventListener('click', listener);
+  return {
+    destroy: function destroy() {
+      document.removeEventListener('click', listener);
+      destroyed = true;
+    },
+    getClicks: function getClicks() {
+      if (destroyed) {
+        return 'Analytics is destroyed. Total clicks = ${counter}';
+      }
+
+      return counter;
+    }
+  };
+}
+
+window.analytics = createAnalytics();
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=analytics.js.map
