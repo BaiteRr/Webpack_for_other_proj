@@ -5,6 +5,7 @@ import './styles/style.css'
 import './styles/less.less'
 import './styles/scss.scss'
 import './styles/sass.sass'
+import './babel'
 
 const post = new Post('Webpack Title', WebpackLogo)
 
