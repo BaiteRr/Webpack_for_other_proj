@@ -24,26 +24,6 @@ h1 {
     width: 200px;
     margin: 0 auto;
 }
-.box {
-  padding: 1rem;
-  border-radius: 5px;
-  margin-top: 1rem;
-  border: 1px solid #ccc;
-}
-.box h2 {
-  text-align: center;
-  color: darkblue;
-}
-
-.card {
-  padding: 1rem;
-  border-radius: 5px;
-  margin-top: 1rem;
-  border: 1px solid #ccc; }
-  .card h2 {
-    text-align: center;
-    color: darkred; }
-
 .note {
   padding: 1rem;
   border-radius: 5px;
@@ -53,3 +33,5 @@ h1 {
     text-align: center;
     color: green; }
 
+
+/*# sourceMappingURL=main.css.map*/
