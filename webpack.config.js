@@ -2,6 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -38,12 +41,23 @@ module.exports = {
 
             ]
         }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        })
     ],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        hmr: true,
+                        reloadAll: true
+                    },
+                },
+                    'css-loader'
+                ],
             },
             {
                 test: /\.(png|jpg|svg|gif|ico)$/,
